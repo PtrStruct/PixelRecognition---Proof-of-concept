@@ -119,6 +119,7 @@ namespace PixelRecognition
             }
         }
 
+        //Ignore
         public Bitmap BrowseImage()
         {
             var ofd = new OpenFileDialog();
