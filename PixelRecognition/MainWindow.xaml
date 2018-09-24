@@ -1,0 +1,57 @@
+﻿<Window x:Class="PixelRecognition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PixelRecognition"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="550"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Column="1"
+              Row="0">
+
+            <StackPanel>
+
+                <Button Width="100"
+            Height="25"
+            Content="Browse"
+            Command="{Binding BrowseImageCommand}"
+                        Margin="0,10,0,0"/>
+
+                <Button Width="100"
+            Height="25"
+            Content="Screenshot"
+            Command="{Binding Screenshot.PrintscreenCommand}"
+                        Margin="0,5,0,0"/>
+
+                <Button Width="100"
+                        Height="25"
+                        Content="Locate"
+                        Command="{Binding Screenshot.PixelSearchCommand}"
+                        Margin="0,5,0,0"/>
+
+            </StackPanel>
+
+        </Grid>
+
+
+        <Grid Column="0">
+            <Image Source="{Binding Screenshot.Image, 
+                UpdateSourceTrigger=PropertyChanged}"
+                   Stretch="Fill"/>
+        </Grid>
+
+    </Grid>
+</Window>
